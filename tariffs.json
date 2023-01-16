@@ -1,21 +1,9 @@
 [
   {
     "type": "electricity",
-    "name": "Flexible (E)",
-    "productCode": "VAR-20-10-01",
-    "tariffCode": "E-1R-VAR-20-10-01-B"
-  },
-  {
-    "type": "electricity",
-    "name": "Agile",
-    "productCode": "AGILE-18-02-21",
-    "tariffCode": "E-1R-AGILE-18-02-21-C"
-  },
-  {
-    "type": "electricity",
     "name": "Go",
-    "productCode": "GO-4H-0030",
-    "tariffCode": "E-1R-GO-4H-0030-A"
+    "productCode": "GO-VAR-22-10-14",
+    "tariffCode": "E-1R-GO-VAR-22-10-14-B"
   },
   {
     "type": "gas",
@@ -23,4 +11,5 @@
     "productCode": "VAR-20-10-01",
     "tariffCode": "G-1R-VAR-20-10-01-B"
   }
+
 ]
