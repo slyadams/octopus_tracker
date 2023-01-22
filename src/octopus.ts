@@ -87,6 +87,14 @@ export class OctopusAPI {
         return data;
     }
 
+    private _convertGasConsumptionToKwh(value: any) {
+        if (typeof (value) === "number" && !isNaN(value)) {
+            return value * 1.02264 * 40 / 3.6;
+        } else {
+            return null;
+        }
+    }
+
     async getConsumption(
         type: "gas" | "electricity",
         from: Date
@@ -94,6 +102,7 @@ export class OctopusAPI {
         const url = this._makeConsumptionUrl(type, from);
         const processor: ResponseProcessor<Consumption> = (result: any) => ({
             ...result,
+            consumption: type === "gas" ? this._convertGasConsumptionToKwh(result.consumption) : result.consumption,
             interval_start: new Date(result.interval_start),
             interval_end: new Date(result.interval_end),
         });
